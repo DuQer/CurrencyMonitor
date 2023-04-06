@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static '/css/styles.css' %}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.btn {
+  background-color: #21232D;
+    font-family: Montserrat;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+</style>
+  </head>
+  <body>
+    <div class="grid-container">
+
+      <!-- Header -->
+      <header class="header">
+        <div class="menu-icon" onclick="openSidebar()">
+          <span class="material-icons-outlined">menu</span>
+        </div>
+        <div class="header-left">
+          <span class="material-icons-outlined">search</span>
+        </div>
+        <div class="header-right">
+          <span class="material-icons-outlined">notifications</span>
+          <span class="material-icons-outlined">account_circle</span>
+        </div>
+      </header>
+      <!-- End Header -->
+
+      <!-- Sidebar -->
+      <aside id="sidebar">
+        <div class="sidebar-title">
+          <div class="sidebar-brand">
+            <span class="material-icons-outlined">inventory</span> Currency Monitor
+          </div>
+          <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+        </div>
+
+        <ul class="sidebar-list">
+          <li class="sidebar-list-item">
+            <a href="#" target="_self">
+              <span class="material-icons-outlined">dashboard</span> Home
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="/ticker" target="_self">
+              <span class="material-icons-outlined">inventory_2</span> Ticker Table
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="/history-search" target="_self">
+              <span class="material-icons-outlined">fact_check</span> History
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="/prediction" target="_self">
+              <span class="material-icons-outlined">add_shopping_cart</span> Prediction
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="#" target="_self">
+              <span class="material-icons-outlined">settings</span> Settings
+            </a>
+          </li>
+        </ul>
+      </aside>
+      <!-- End Sidebar -->
+
+      <!-- Main -->
+      <main class="main-container">
+
+
+          <h2 class="mb-0">All Tickers</h2>
+    <table class="styled-table">
+    <thead>
+        <tr>
+            <th scope="col">Ticker Symbol</th>
+            <th scope="col">Ticker Name</th>
+        </tr>
+    </thead>
+    <tbody>
+                                {% if ticker_list %}
+                                {% for i in ticker_list %}
+                                <tr>
+                                    <td>{{i.Symbol}}</td>
+                                    <td>{{i.Name}}</td>
+                                </tr>
+                                {% endfor %}
+                                {% endif %}
+    </tbody>
+</table>
+
+<button class="btn" style="width:100%"><i class="fa fa-download"></i> Download</button>
+      </main>
+      <!-- End Main -->
+
+    </div>
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
