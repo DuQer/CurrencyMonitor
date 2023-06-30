@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -25,7 +24,7 @@ SECRET_KEY = 'django-insecure-2@-b92xdzxvb#bky)xtl23a=5y#5(i+c53cg$^grn+d)=525dm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -58,6 +57,7 @@ TEMPLATES = [
         ,
         'APP_DIRS': True,
         'OPTIONS': {
+            'debug': False,
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'CurrencyMonitor.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'resources/db.sqlite3',
     }
 }
 

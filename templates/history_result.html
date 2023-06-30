@@ -4,66 +4,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>History Result</title>
 
-    <!-- Montserrat Font -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static '/css/styles.css' %}">
 
-      <style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-      </style>
   </head>
 
   <body>
     <div class="grid-container">
 
-      <!-- Header -->
       <header class="header">
-        <div class="menu-icon" onclick="openSidebar()">
+        <div class="menu-icon">
           <span class="material-icons-outlined">menu</span>
         </div>
         <div class="header-left">
           <span class="material-icons-outlined">search</span>
         </div>
         <div class="header-right">
-          <span class="material-icons-outlined">notifications</span>
-          <span class="material-icons-outlined">account_circle</span>
+            <form action='/logout/' method="post">
+                {% csrf_token %}
+          <button type="submit"><span class="material-icons-outlined">account_circle</span></button>
+                 </form>
         </div>
       </header>
-      <!-- End Header -->
 
-      <!-- Sidebar -->
       <aside id="sidebar">
         <div class="sidebar-title">
           <div class="sidebar-brand">
             <span class="material-icons-outlined">inventory</span> Currency Monitor
           </div>
-          <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
         </div>
 
         <ul class="sidebar-list">
           <li class="sidebar-list-item">
-            <a href="#" target="_self">
+            <a href="/dashboard" target="_self">
               <span class="material-icons-outlined">dashboard</span> Home
             </a>
           </li>
@@ -79,25 +55,18 @@ tr:nth-child(even) {
           </li>
           <li class="sidebar-list-item">
             <a href="/prediction" target="_self">
-              <span class="material-icons-outlined">add_shopping_cart</span> Prediction
-            </a>
-          </li>
-          <li class="sidebar-list-item">
-            <a href="#" target="_self">
-              <span class="material-icons-outlined">settings</span> Settings
+              <span class="material-icons-outlined">arrow_right_alt</span> Prediction
             </a>
           </li>
         </ul>
       </aside>
-      <!-- End Sidebar -->
 
-      <!-- Main -->
       <main class="main-container">
 
           <div class="charts">
 
           <div class="charts-card">
-            <p class="chart-title">Exchange rate for USD/PLN</p>
+            <p class="chart-title">Exchange rate for EUR/USD</p>
             <div>
                 <canvas id="myChart"></canvas>
             </div>
@@ -135,9 +104,9 @@ tr:nth-child(even) {
 
 <table>
   <tr>
-    <th>Maximum</th>
-    <th>Minimum</th>
-    <th>Mean</th>
+    <th>Maximum value</th>
+    <th>Minimum value</th>
+    <th>Mean value</th>
   </tr>
   <tr>
     <td>{{ max_value }}</td>
@@ -146,4 +115,5 @@ tr:nth-child(even) {
   </tr>
 
 </table>
+      </main>
 </html>

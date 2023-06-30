@@ -1,0 +1,7 @@
+{% block content %}
+  <h1>Page not found</h1>
+  <p>The requested page "{{ request_path }}" was not found on this server.</p>
+  {% if exception %}
+    <p>Error details: {{ exception_value }}</p>
+  {% endif %}
+{% endblock %}

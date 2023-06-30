@@ -3,34 +3,32 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <title>Login page</title>
-    <link rel="stylesheet" href="{% static '/css/login.css' %}">
+  <title>Registration page</title>
+    <link rel="stylesheet" href="{% static '/css/register.css' %}">
 </head>
 <body>
-<div class="login-form">
-  <form action="/login/" class="login-form" method="post">
-    <h1>Login Form</h1>
+<div class="registration-form">
+  <form action="/register/" class="registration-form" method="post">
+    <h1>Registration Form</h1>
       {% csrf_token %}
     <div class="container">
       <div class="user-input">
         <input type="text" placeholder="USERNAME" name="username">
       </div>
       <div class="user-input">
-        <input type="password" placeholder="PASSWORD" name="password">
+        <input type="password" placeholder="PASSWORD" name="password1">
+      </div>
+        <div class="user-input">
+        <input type="password" placeholder="REPEAT YOUR PASSWORD" name="password2">
       </div>
     </div>
     <div class="button-clicked">
-      <button>SIGN IN</button>
-    </div>
-  </form>
-  <hr>
-  <div class="button-clicked">
-      <button><a href="{% url 'register_page' %}">SIGN UP</a></button>
+      <button>SIGN UP</button>
     </div>
       {% if error %}
           <p style="color: red; padding: 10px; font-weight: bold;">{{ error }}</p>
       {% endif %}
-
+  </form>
 </div>
 </body>
 </html>

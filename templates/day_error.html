@@ -4,12 +4,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Search historical data</title>
+    <title>Invalid days format</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="{% static '/css/styles.css' %}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
+
   <body>
     <div class="grid-container">
 
@@ -60,15 +62,9 @@
       </aside>
 
       <main class="main-container">
-
-          <form action="/history/" class="search-form" method="post">
-            {% csrf_token %}
-            <input type="text" placeholder="Ticker Symbol" id="ticker_symbol" name="ticker_symbol" />
-            <input type="date" placeholder="Start" id="start_date" name="start_date"/>
-            <input type="date" placeholder="End" id="end_date" name="end_date"/>
-            <input type="submit" value="Search historical data">
-          </form>
-
+          {% if error %}
+          <p style="color: red; padding: 10px; font-weight: bold;">{{ error }}</p>
+      {% endif %}
       </main>
     </div>
 

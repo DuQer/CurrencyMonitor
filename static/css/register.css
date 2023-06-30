@@ -5,7 +5,7 @@
 }
 body {
   background: #2D3B66;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat";
 }
 a{
   text-decoration: none;
@@ -14,46 +14,46 @@ a{
 a:hover{
   color: white;
 }
-.login-form {
+.registration-form {
   width: 600px;
   background: white;
   display: flex;
   margin: 120px auto;
   flex-direction: column;
 }
-.login-form h1 {
+.registration-form h1 {
   text-align: center;
 }
-.login-form .container {
+.registration-form .container {
   padding: 35px;
 }
-.login-form .user-input {
+.registration-form .user-input {
   padding-top: 10px;
   padding-bottom: 10px;
 }
-.login-form .user-input input {
+.registration-form .user-input input {
   width: 100%;
   font-size: 18px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat";
   outline: none;
   display: block;
   border: none;
   border-bottom: 1px solid black;
 }
-.login-form .button-clicked {
+.registration-form .button-clicked {
   display: flex;
   flex-direction: row;
 }
-.login-form .button-clicked button {
+.registration-form .button-clicked button {
   width: 100%;
   background: #e8e9ec;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat";
   color: #777;
   cursor: pointer;
   border: none;
   padding: 18px;
 }
-.login-form .button-clicked button:hover {
+.registration-form .button-clicked button:hover {
   color: white;
   background: #1b1b1b;
 }

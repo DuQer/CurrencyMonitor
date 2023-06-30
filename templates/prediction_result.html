@@ -1,10 +1,109 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Prediction Result</title>
-</head>
-<body>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '/css/styles.css' %}">
 
-</body>
+  </head>
+  <body>
+    <div class="grid-container">
+
+      <header class="header">
+        <div class="menu-icon">
+          <span class="material-icons-outlined">menu</span>
+        </div>
+        <div class="header-left">
+          <span class="material-icons-outlined">search</span>
+        </div>
+        <div class="header-right">
+            <form action='/logout/' method="post">
+                {% csrf_token %}
+          <button type="submit"><span class="material-icons-outlined">account_circle</span></button>
+                 </form>
+        </div>
+      </header>
+
+      <aside id="sidebar">
+        <div class="sidebar-title">
+          <div class="sidebar-brand">
+            <span class="material-icons-outlined">inventory</span> Currency Monitor
+          </div>
+        </div>
+
+        <ul class="sidebar-list">
+          <li class="sidebar-list-item">
+            <a href="/dashboard" target="_self">
+              <span class="material-icons-outlined">dashboard</span> Home
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="/ticker" target="_self">
+              <span class="material-icons-outlined">inventory_2</span> Ticker Table
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="/history-search" target="_self">
+              <span class="material-icons-outlined">fact_check</span> History
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="/prediction" target="_self">
+              <span class="material-icons-outlined">arrow_right_alt</span> Prediction
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <main class="main-container">
+          <div>
+                <canvas id="myChart"></canvas>
+            </div>
+          <h2>All values</h2>
+    <table>
+    <thead>
+        <tr>
+            <th scope="col">Ticker Value</th>
+        </tr>
+    </thead>
+    <tbody>
+                                {% for i in y_data %}
+                                <tr>
+                                    <td>{{i}}</td>
+                                </tr>
+                                {% endfor %}
+    </tbody>
+</table>
+      </main>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: {{ x_data | safe}},
+      datasets: [{
+        label: {{ ticker_symbol | safe}},
+        data: {{ y_data | safe }},
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: false
+        }
+      }
+    }
+  });
+</script>
+
+  </body>
 </html>

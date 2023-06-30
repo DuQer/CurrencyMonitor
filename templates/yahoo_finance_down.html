@@ -4,17 +4,40 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Search historical data</title>
+    <title>Yahoo Finance down</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="{% static '/css/styles.css' %}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.btn {
+    background-color: #21232D;
+    color: white;
+    font-family: Montserrat;
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    font-size: 18px;
+}
+a{
+    color:white;
+    text-decoration: none;
+}
+
+.btn:hover {
+  background-color: RoyalBlue;
+}
+.fa-download{
+    margin-right: 5px;
+}
+</style>
   </head>
   <body>
     <div class="grid-container">
 
       <header class="header">
-        <div class="menu-icon">
+        <div class="menu-icon" onclick="openSidebar()">
           <span class="material-icons-outlined">menu</span>
         </div>
         <div class="header-left">
@@ -33,6 +56,7 @@
           <div class="sidebar-brand">
             <span class="material-icons-outlined">inventory</span> Currency Monitor
           </div>
+          <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
         </div>
 
         <ul class="sidebar-list">
@@ -53,22 +77,14 @@
           </li>
           <li class="sidebar-list-item">
             <a href="/prediction" target="_self">
-              <span class="material-icons-outlined">arrow_right_alt</span> Prediction
+              <span class="material-icons-outlined">add_shopping_cart</span> Prediction
             </a>
           </li>
         </ul>
       </aside>
 
       <main class="main-container">
-
-          <form action="/history/" class="search-form" method="post">
-            {% csrf_token %}
-            <input type="text" placeholder="Ticker Symbol" id="ticker_symbol" name="ticker_symbol" />
-            <input type="date" placeholder="Start" id="start_date" name="start_date"/>
-            <input type="date" placeholder="End" id="end_date" name="end_date"/>
-            <input type="submit" value="Search historical data">
-          </form>
-
+          <h2>Something goes wrong ! You have probably entered an incorrect number of days or the number of days you entered exceeds 365 days.</h2>
       </main>
     </div>
 
