@@ -17,16 +17,17 @@ Application can be run using docker container.
 
 ![image](https://github.com/DuQer/CurrencyMonitor/assets/66977132/c3e2b9bf-6071-42cd-9d56-c0c017839a3d)
 
-2. **Ticker table**
+2. **Ticker table view**
 
 ![image](https://github.com/DuQer/CurrencyMonitor/assets/66977132/58220b67-8ed1-4cfe-a803-c3705a379e02)
 
-3. **Historical data**
+
+3. **Historical data view**
 
 ![image](https://github.com/DuQer/CurrencyMonitor/assets/66977132/6aa22100-9f3f-47ee-a5f6-d472b8ca1b62)
 
 
-4. **Ticker table**
+4. **Prediction view**
 
 ![image](https://github.com/DuQer/CurrencyMonitor/assets/66977132/876334e3-6ba8-42aa-98ea-83deb35d23fb)
 
