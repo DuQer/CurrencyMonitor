@@ -19,19 +19,19 @@ Application can be run using docker container.
 Key features of the application:
 - User account creation
 
-
+The application allows users to create their own accounts, providing access to the app's features and functionalities.
 - Currency ticker symbols list
 
-
+Access to a detailed list of currency ticker symbols, facilitating the monitoring of different currencies and their market symbols.
 - Ticker symbols download
 
-
+The application features the ability to download currency ticker symbols, useful for data analysis in external tools.
 - Historical currency exchange rates
 
-
+Users can check historical data on currency exchange rates, allowing for analysis of changes over time and making more informed investment decisions.
 - Currency exchange rate prediction
 
-
+The app enables users to predict exchange rates for selected currencies over a specified period, aiding informed investment decisions based on market forecasts.
 ## Screenshots
 1. **Main view**
 
