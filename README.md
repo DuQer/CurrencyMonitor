@@ -2,16 +2,36 @@
 
 ## Table of contents
 * [General info](#general-info)
+* [Features](#features)
 * [Screenshots](#screenshots)
 * [Installation](#installation)
 * [System requirements](#system-requirements)
 * [Technology stack](#technology-stack)
 
 
+
 ## General info
 CurrencyMonitor is a simple application to watch currency exchange rates. It allows user to register an account, display currency symbols and download it, 
 check historical data and preview popular exchange rates. It is also possible to predict exchange rates, using LSTM(Long short-term memory) artificial neural network.
 Application can be run using docker container.
+
+## Features
+Key features of the application:
+- User account creation
+
+
+- Currency ticker symbols list
+
+
+- Ticker symbols download
+
+
+- Historical currency exchange rates
+
+
+- Currency exchange rate prediction
+
+
 ## Screenshots
 1. **Main view**
 
